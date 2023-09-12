@@ -170,7 +170,7 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
           mountPath: /var/www/html
           subPath: "html"
         - name: nextcloud-data
-          mountPath: {{ .Values.nextcloud.datadir }}
+          mountPath: /var/www/html/data
           subPath: "data"
         - name: nextcloud-data
           mountPath: /var/www/html/config

@@ -142,6 +142,12 @@ questions:
             type: path
             default: "/var/www/html/data"
             required: true
+        - variable: mystring
+          label: "string to control visibility"
+          schema:
+            type: string
+            default: "/var/www/html/data"
+            required: true
         - variable: install_ffmpeg
           label: "Install ffmpeg"
           description: "Automatically Install ffmpeg when the container starts"
@@ -289,7 +295,7 @@ questions:
           label: "Nextcloud User Data Volume"
           schema:
             type: dict
-            show_if: [[ "nextcloud.datadir", "!=", "/var/www/html/data" ]]
+            show_if: [[ "nextcloud.mystring", "!=", "/var/www/html/data" ]]
             attrs:
               - variable: datasetName
                 label: "Nextcloud User Data Volume Name"
@@ -312,6 +318,7 @@ questions:
               - variable: hostPathEnabled
                 label: "Enable Host Path for Nextcloud User Data Volume"
                 description: "Path on host that will be mounted at the location of the Nextcloud data directory in the container. Set this only if you moved the Nextcloud data directory out of /var/www/html/"
+                show_if: [[ "nextcloud.mystring", "!=", "/var/www/html/data2" ]]
                 schema:
                   type: boolean
                   default: false

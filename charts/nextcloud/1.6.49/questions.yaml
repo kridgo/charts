@@ -289,7 +289,7 @@ questions:
           label: "Nextcloud User Data Volume"
           schema:
             type: dict
-            show_subquestions_if: {{ neq .Values.nextcloud.datadir "/var/www/html/data" }}
+            #show_subquestions_if: {{ neq .Values.nextcloud.datadir "/var/www/html/data" }}
             attrs:
               - variable: datasetName
                 label: "Nextcloud User Data Volume Name"

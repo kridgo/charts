@@ -308,7 +308,7 @@ questions:
                   type: path
                   hidden: true
                   editable: false
-                  default: {{ .Values.nextcloud.datadir }}
+                  default: "/mnt/data"
               - variable: hostPathEnabled
                 label: "Enable Host Path for Nextcloud User Data Volume"
                 schema:

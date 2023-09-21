@@ -295,7 +295,7 @@ questions:
           label: "Nextcloud User Data Volume"
           schema:
             type: dict
-            show_if: [[ "nextcloud.mystring", "!=", "/var/www/html/data" ]]
+            show_if: [[ "nextcloud.mystring=/var/www/html/data" ]]
             attrs:
               - variable: datasetName
                 label: "Nextcloud User Data Volume Name"

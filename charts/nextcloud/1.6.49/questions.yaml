@@ -137,7 +137,7 @@ questions:
             required: true
         - variable: datadir
           label: "Nextcloud data directory"
-          description: "Configures the data directory where nextcloud stores all files from the users"
+          description: "Configures the data directory where nextcloud stores all files from the users. When changing this, make sure to specify the Nextcloud User Data Volume in the section storage."
           schema:
             type: path
             default: "/var/www/html/data"

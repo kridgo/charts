@@ -184,7 +184,7 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
         - name: nextcloud-data
           mountPath: /var/www/html/themes
           subPath: "themes"
-        {{ if neq .Values.nextcloud.datadir "/var/www/html/data" }}
+        {{ if ne .Values.nextcloud.datadir "/var/www/html/data" }}
         - name: nextcloud-userdata
           mountPath: {{ .Values.nextcloud.datadir }}
         {{ end }}
